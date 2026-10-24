@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "geoai-outdoor-assistant"
+version = "0.1.0"
+description = "Grounded outdoor activity planning with live weather, air quality, and OpenStreetMap data."
+requires-python = ">=3.11"
+dependencies = ["fastapi>=0.115,<1", "uvicorn[standard]>=0.30,<1", "httpx>=0.27,<1", "pydantic>=2.8,<3", "transformers>=4.46,<5", "torch>=2.4", "accelerate>=0.34,<2", "huggingface-hub>=0.26,<1", "safetensors>=0.4,<1"]
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.uv]
+package = false
+
+
+[tool.setuptools.package-data]
+app = ["static/*.html"]
